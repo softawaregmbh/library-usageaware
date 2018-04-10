@@ -11,13 +11,13 @@ namespace UsageAware.ApplicationInsights
     {
         public Task TrackActionAsync(string action, string detailedAction)
         {
-            var tc = new TelemetryClient(new TelemetryConfiguration(UsageAware.InstrumentationKey));
+            var tc = new TelemetryClient(TelemetryConfiguration.Active);
             
             tc.TrackEvent(
                 action, 
                 new Dictionary<string, string>()
                 {
-                    { "detailedAction", "created" }
+                    { "detailedAction", detailedAction }
                 });
 
             return Task.CompletedTask;

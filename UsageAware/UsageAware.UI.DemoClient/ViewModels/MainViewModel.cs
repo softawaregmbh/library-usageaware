@@ -17,10 +17,14 @@ namespace UsageAware.UI.DemoClient.ViewModels
         {
             this.usageAwareLogger = usageAwareLogger;
 
-            this.TrackPersonCreatedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "erstellt"));
+            this.TrackPersonCreatedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "created"));
+
+            this.TrackPersonChangedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "changed"));
         }
 
         public ICommand TrackPersonCreatedCommand { get; protected set; }
+
+        public ICommand TrackPersonChangedCommand { get; protected set; }
 
     }
 }

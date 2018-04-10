@@ -16,7 +16,7 @@ namespace UsageAware.UI.DemoClient
         public App()
         {
             var sessionId = Guid.NewGuid().ToString();
-            ApplicationInsights.UsageAware.Initialize("94287a08-a0b8-483d-9cf5-2c18cb1f88cf", () => new UsageAwareContext(sessionId));
+            ApplicationInsights.UsageAware.Initialize("94287a08-a0b8-483d-9cf5-2c18cb1f88cf", () => new UsageAwareContext(sessionId, "demo-user", "demo-tenant"));
         }
     }
 }
