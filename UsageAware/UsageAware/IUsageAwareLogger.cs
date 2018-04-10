@@ -8,5 +8,7 @@ namespace UsageAware
     public interface IUsageAwareLogger
     {
         Task LoginAsync(string userId, string tenant = null);
+
+        Task TrackActionAsync(string action, string detailedAction);
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UsageAware.ApplicationInsights;
+using UsageAware.UI.DemoClient.ViewModels;
 
 namespace UsageAware.UI.DemoClient
 {
@@ -23,6 +25,8 @@ namespace UsageAware.UI.DemoClient
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new MainViewModel(new UsageAwareLogger("94287a08-a0b8-483d-9cf5-2c18cb1f88cf"));
         }
     }
 }
