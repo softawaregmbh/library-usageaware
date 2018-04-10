@@ -7,6 +7,5 @@ namespace UsageAware
 {
     public interface IUsageAwareLogger
     {
-        Task LoginAsync(string userId, string tenant = null);
     }
 }
