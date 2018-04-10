@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace UsageAware
 {
     public interface IUsageAwareLogger
     {
+        Task TrackActionAsync(string action, string detailedAction);
     }
 }

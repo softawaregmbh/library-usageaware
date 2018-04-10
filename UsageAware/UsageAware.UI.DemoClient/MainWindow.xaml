@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:UsageAware.UI.DemoClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="Margin" Value="30" />
+        </Style>
+    </Window.Resources>
     <Grid>
+
+        <StackPanel Orientation="Vertical">
+
+            <Button Content="Track person creation" 
+                    Command="{Binding TrackPersonCreatedCommand}" />
+
+        </StackPanel>
         
     </Grid>
 </Window>

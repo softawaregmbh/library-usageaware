@@ -4,7 +4,7 @@ namespace UsageAware
 {
     public class UsageAwareContext
     {
-        public UsageAwareContext(string sessionId, string userId, string tenantId)
+        public UsageAwareContext(string sessionId, string userId = null, string tenantId = null)
         {
             this.SessionId = sessionId ?? throw new ArgumentNullException(nameof(sessionId));
             this.UserId = userId;
