@@ -11,10 +11,13 @@ namespace UsageAware.UI.DemoClient.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        private IUsageAwareLogger usageAwareLogger;
 
         public MainViewModel(IUsageAwareLogger usageAwareLogger)
         {
-            this.TrackPersonCreatedCommand = new RelayCommand(async () => await usageAwareLogger.TrackActionAsync("Person", "erstellt"));
+            this.usageAwareLogger = usageAwareLogger;
+
+            this.TrackPersonCreatedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "erstellt"));
         }
 
         public ICommand TrackPersonCreatedCommand { get; protected set; }
