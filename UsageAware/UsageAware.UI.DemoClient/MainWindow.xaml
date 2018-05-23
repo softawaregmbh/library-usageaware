@@ -16,8 +16,11 @@
 
         <StackPanel Orientation="Vertical">
 
-            <Button Content="Track person creation" 
+            <Button Content="Track person created" 
                     Command="{Binding TrackPersonCreatedCommand}" />
+
+            <Button Content="Track person changed" 
+                    Command="{Binding TrackPersonChangedCommand}" />
 
         </StackPanel>
         

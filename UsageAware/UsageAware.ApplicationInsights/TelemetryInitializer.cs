@@ -19,6 +19,7 @@ namespace UsageAware.ApplicationInsights
         {
             var context = this.contextProvider();
 
+            telemetry.Context.InstrumentationKey = UsageAware.InstrumentationKey;
             telemetry.Context.Session.Id = context.SessionId;
 
             if (context.UserId != null)
