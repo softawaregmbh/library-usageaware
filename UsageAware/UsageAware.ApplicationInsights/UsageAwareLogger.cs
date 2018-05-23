@@ -1,24 +1,32 @@
-﻿using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Channel;
-using Microsoft.ApplicationInsights.Extensibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights;
 
 namespace UsageAware.ApplicationInsights
 {
     public class UsageAwareLogger : IUsageAwareLogger
     {
-        public Task TrackActionAsync(string action, string detailedAction)
+        private readonly TelemetryClient client;
+
+        public UsageAwareLogger()
         {
-            var tc = new TelemetryClient(new TelemetryConfiguration(UsageAware.InstrumentationKey));
-            
-            tc.TrackEvent(
-                action, 
-                new Dictionary<string, string>()
-                {
-                    { "detailedAction", "created" }
-                });
+            this.client = UsageAware.GetTelemetryClient();
+        }
+
+        public Task TrackActionAsync(string area, string action, TimeSpan? duration = null)
+        {            
+            var properties = new Dictionary<string, string>()
+            {
+                ["action"] = action                
+            };
+
+            if (duration.HasValue)
+            {
+                properties.Add("duration", duration.ToString());
+            }
+
+            this.client.TrackEvent(area, properties);
 
             return Task.CompletedTask;
         }

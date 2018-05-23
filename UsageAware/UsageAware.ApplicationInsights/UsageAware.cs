@@ -1,29 +1,39 @@
-﻿using Microsoft.ApplicationInsights.Extensibility;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace UsageAware.ApplicationInsights
 {
     public static class UsageAware
     {
-        private static bool isInitialized = false;
-        private static string instrumentationKey;
+        private static TelemetryConfiguration configuration;
 
-        public static string InstrumentationKey => isInitialized ? instrumentationKey : throw new InvalidOperationException("UsageAware is not initialized.");
-
-
-        public static void Initialize(string instrumentationKey, Func<UsageAwareContext> contextProvider)
+        public static void Initialize(string instrumentationKey, Func<UsageAwareContext> contextProvider, bool addSessionAndUserDataToAI)
         {           
-            if (isInitialized)
+            if (configuration != null)
             {
                 throw new InvalidOperationException("UsageAware is already initialized.");
             }
 
-            UsageAware.instrumentationKey = instrumentationKey ?? throw new ArgumentNullException(nameof(instrumentationKey));
-            TelemetryConfiguration.Active.TelemetryInitializers.Add(new TelemetryInitializer(contextProvider));
+            if (addSessionAndUserDataToAI)
+            {
+                // add initializer for active configuration that is used for default Application Insights
+                TelemetryConfiguration.Active.TelemetryInitializers.Add(new TelemetryInitializer(contextProvider));
+            }
 
-            isInitialized = true;
+            // create a configuration to use for the UsageAware events
+            configuration = new TelemetryConfiguration(instrumentationKey);
+            configuration.TelemetryInitializers.Add(new TelemetryInitializer(contextProvider));
+        }
+
+        internal static TelemetryClient GetTelemetryClient()
+        {
+            if (configuration == null)
+            {
+                throw new InvalidOperationException("UsageAware is not initialized.");
+            }
+            
+            return new TelemetryClient(configuration);
         }
     }
 }

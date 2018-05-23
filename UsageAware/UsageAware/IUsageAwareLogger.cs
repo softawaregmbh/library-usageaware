@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace UsageAware
 {
     public interface IUsageAwareLogger
     {
-        Task TrackActionAsync(string action, string detailedAction);
+        Task TrackActionAsync(string area, string action, TimeSpan? duration = null);
     }
 }
