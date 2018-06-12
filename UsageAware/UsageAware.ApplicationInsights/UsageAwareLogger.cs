@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.ApplicationInsights;
 
@@ -14,19 +13,21 @@ namespace UsageAware.ApplicationInsights
             this.client = UsageAware.GetTelemetryClient();
         }
 
-        public Task TrackActionAsync(string area, string action, TimeSpan? duration = null)
-        {            
-            var properties = new Dictionary<string, string>()
-            {
-                ["action"] = action                
-            };
+        public Task TrackActionAsync(string area, string action, IEnumerable<KeyValuePair<string, string>> additionalProperties = null)
+        {
+            var properties = new Dictionary<string, string>();
 
-            if (duration.HasValue)
+            if (additionalProperties != null)
             {
-                properties.Add("duration", duration.ToString());
+                foreach (var additionalProperty in additionalProperties)
+                {
+                    properties.Add(additionalProperty.Key, additionalProperty.Value);
+                };
             }
 
-            this.client.TrackEvent(area, properties);
+            properties["area"] = area;
+
+            this.client.TrackEvent(action, properties);
 
             return Task.CompletedTask;
         }

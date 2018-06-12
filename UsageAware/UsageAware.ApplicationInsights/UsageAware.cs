@@ -8,14 +8,14 @@ namespace UsageAware.ApplicationInsights
     {
         private static TelemetryConfiguration configuration;
 
-        public static void Initialize(string instrumentationKey, Func<UsageAwareContext> contextProvider, bool addSessionAndUserDataToAI)
+        public static void Initialize(string instrumentationKey, Func<UsageAwareContext> contextProvider, bool addContextToDefaultAIEvents)
         {           
             if (configuration != null)
             {
                 throw new InvalidOperationException("UsageAware is already initialized.");
             }
 
-            if (addSessionAndUserDataToAI)
+            if (addContextToDefaultAIEvents)
             {
                 // add initializer for active configuration that is used for default Application Insights
                 TelemetryConfiguration.Active.TelemetryInitializers.Add(new TelemetryInitializer(contextProvider));
