@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UsageAware.ApplicationInsights
+namespace softaware.UsageAware.ApplicationInsights
 {
     public class UsageAwareOptions
     {

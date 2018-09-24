@@ -1,4 +1,4 @@
-﻿namespace UsageAware
+﻿namespace softaware.UsageAware
 {
     public class UsageAwareContext
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
-using UsageAware;
-using UsageAware.ApplicationInsights;
+using softaware.UsageAware;
+using softaware.UsageAware.ApplicationInsights;
 
 namespace Microsoft.AspNetCore.Builder
 {
@@ -35,7 +35,7 @@ namespace Microsoft.AspNetCore.Builder
 
             setupAction(options);
 
-            UsageAware.ApplicationInsights.UsageAware.Initialize(
+            softaware.UsageAware.ApplicationInsights.UsageAware.Initialize(
                 options.InstrumentationKey, 
                 options.ContextProvider, 
                 options.AddContextInformationToDefaultAIEvents);

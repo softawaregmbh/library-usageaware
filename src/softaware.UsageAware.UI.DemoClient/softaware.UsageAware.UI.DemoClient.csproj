@@ -117,15 +117,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\UsageAware.ApplicationInsights\UsageAware.ApplicationInsights.csproj">
+    <ProjectReference Include="..\softaware.UsageAware.ApplicationInsights\softaware.UsageAware.ApplicationInsights.csproj">
       <Project>{fa54ec43-ea78-4636-b4a8-62cb369cb43a}</Project>
-      <Name>UsageAware.ApplicationInsights</Name>
+      <Name>softaware.UsageAware.ApplicationInsights</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UsageAware\UsageAware.csproj">
+    <ProjectReference Include="..\softaware.UsageAware\softaware.UsageAware.csproj">
       <Project>{065712de-ec2e-456a-bf6d-28eacea01d8f}</Project>
-      <Name>UsageAware</Name>
+      <Name>softaware.UsageAware</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,7 +2,7 @@
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 
-namespace UsageAware.ApplicationInsights
+namespace softaware.UsageAware.ApplicationInsights
 {
     public static class UsageAware
     {

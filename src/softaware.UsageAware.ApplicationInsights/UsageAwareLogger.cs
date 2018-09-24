@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.ApplicationInsights;
 
-namespace UsageAware.ApplicationInsights
+namespace softaware.UsageAware.ApplicationInsights
 {
     public class UsageAwareLogger : IUsageAwareLogger
     {

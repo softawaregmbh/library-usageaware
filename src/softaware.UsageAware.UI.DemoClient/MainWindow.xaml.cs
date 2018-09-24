@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UsageAware.ApplicationInsights;
-using UsageAware.UI.DemoClient.ViewModels;
+using softaware.UsageAware.ApplicationInsights;
+using softaware.UsageAware.UI.DemoClient.ViewModels;
 
-namespace UsageAware.UI.DemoClient
+namespace softaware.UsageAware.UI.DemoClient
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

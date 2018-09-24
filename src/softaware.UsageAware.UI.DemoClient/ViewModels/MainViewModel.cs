@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace UsageAware.UI.DemoClient.ViewModels
+namespace softaware.UsageAware.UI.DemoClient.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {

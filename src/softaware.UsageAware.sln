@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageAware.UI.DemoClient", "UsageAware.UI.DemoClient\UsageAware.UI.DemoClient.csproj", "{3601F477-EA31-45E3-BED5-3FE1B3C79BCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "softaware.UsageAware.UI.DemoClient", "softaware.UsageAware.UI.DemoClient\softaware.UsageAware.UI.DemoClient.csproj", "{3601F477-EA31-45E3-BED5-3FE1B3C79BCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsageAware", "UsageAware\UsageAware.csproj", "{065712DE-EC2E-456A-BF6D-28EACEA01D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "softaware.UsageAware", "softaware.UsageAware\softaware.UsageAware.csproj", "{065712DE-EC2E-456A-BF6D-28EACEA01D8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsageAware.ApplicationInsights", "UsageAware.ApplicationInsights\UsageAware.ApplicationInsights.csproj", "{FA54EC43-EA78-4636-B4A8-62CB369CB43A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "softaware.UsageAware.ApplicationInsights", "softaware.UsageAware.ApplicationInsights\softaware.UsageAware.ApplicationInsights.csproj", "{FA54EC43-EA78-4636-B4A8-62CB369CB43A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsageAware.ApplicationInsights.AspNetCore", "UsageAware.ApplicationInsights.AspNetCore\UsageAware.ApplicationInsights.AspNetCore.csproj", "{DBAE7409-C75A-4B83-8F11-9346F034A2BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "softaware.UsageAware.ApplicationInsights.AspNetCore", "softaware.UsageAware.ApplicationInsights.AspNetCore\softaware.UsageAware.ApplicationInsights.AspNetCore.csproj", "{DBAE7409-C75A-4B83-8F11-9346F034A2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace UsageAware.UI.DemoClient
+namespace softaware.UsageAware.UI.DemoClient
 {
     /// <summary>
     /// Interaction logic for App.xaml

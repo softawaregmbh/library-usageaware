@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UsageAware.ApplicationInsights
+namespace softaware.UsageAware.ApplicationInsights
 {
     class TelemetryInitializer : ITelemetryInitializer
     {

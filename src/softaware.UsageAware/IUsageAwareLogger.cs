@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace UsageAware
+namespace softaware.UsageAware
 {
     public interface IUsageAwareLogger
     {
