@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 using softaware.UsageAware;
 using softaware.UsageAware.ApplicationInsights;
@@ -7,40 +8,17 @@ namespace Microsoft.AspNetCore.Builder
 {
     public static class UsageAwareMiddleware
     {
-        public static IServiceCollection AddUsageAware(this IServiceCollection services)
+        public static IServiceCollection AddUsageAware(this IServiceCollection services, Func<UsageAwareContext> contextProvider)
         {
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
             }
 
+            services.AddSingleton<ITelemetryInitializer>(new UsageAwareTelemetryInitializer(contextProvider));
             services.AddScoped<IUsageAwareLogger, UsageAwareLogger>();
 
             return services;
-        }
-
-        public static IApplicationBuilder UseUsageAware(this IApplicationBuilder app, Action<UsageAwareOptions> setupAction)
-        {
-            if (app == null)
-            {
-                throw new ArgumentNullException(nameof(app));
-            }
-
-            if (setupAction == null)
-            {
-                throw new ArgumentNullException(nameof(setupAction));
-            }
-
-            var options = new UsageAwareOptions();
-
-            setupAction(options);
-
-            softaware.UsageAware.ApplicationInsights.UsageAware.Initialize(
-                options.InstrumentationKey, 
-                options.ContextProvider, 
-                options.AddContextInformationToDefaultAIEvents);
-
-            return app;
         }
     }
 }

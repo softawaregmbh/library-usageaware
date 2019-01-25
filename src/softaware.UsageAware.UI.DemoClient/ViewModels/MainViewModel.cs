@@ -19,7 +19,7 @@ namespace softaware.UsageAware.UI.DemoClient.ViewModels
 
             this.TrackPersonCreatedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "created"));
 
-            this.TrackPersonChangedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "changed"));
+            this.TrackPersonChangedCommand = new RelayCommand(async () => await this.usageAwareLogger.TrackActionAsync("Person", "changed", new Dictionary<string, string>() { { "personId", "4711" } }));
         }
 
         public ICommand TrackPersonCreatedCommand { get; protected set; }

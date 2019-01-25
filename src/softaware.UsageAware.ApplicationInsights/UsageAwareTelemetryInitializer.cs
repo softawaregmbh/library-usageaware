@@ -1,16 +1,14 @@
 ﻿using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace softaware.UsageAware.ApplicationInsights
 {
-    class TelemetryInitializer : ITelemetryInitializer
+    public class UsageAwareTelemetryInitializer : ITelemetryInitializer
     {
         private readonly Func<UsageAwareContext> contextProvider;
 
-        public TelemetryInitializer(Func<UsageAwareContext> contextProvider)
+        public UsageAwareTelemetryInitializer(Func<UsageAwareContext> contextProvider)
         {
             this.contextProvider = contextProvider ?? throw new ArgumentNullException(nameof(contextProvider));
         }

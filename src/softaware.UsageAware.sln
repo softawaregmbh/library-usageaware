@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "softaware.UsageAware.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "softaware.UsageAware.ApplicationInsights.AspNetCore", "softaware.UsageAware.ApplicationInsights.AspNetCore\softaware.UsageAware.ApplicationInsights.AspNetCore.csproj", "{DBAE7409-C75A-4B83-8F11-9346F034A2BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "softaware.UsageAware.UI.WebApp", "softaware.UsageAware.UI.WebApp\softaware.UsageAware.UI.WebApp.csproj", "{4F3EEB67-4FEF-40A1-B992-5A90FA05A3C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DBAE7409-C75A-4B83-8F11-9346F034A2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBAE7409-C75A-4B83-8F11-9346F034A2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBAE7409-C75A-4B83-8F11-9346F034A2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F3EEB67-4FEF-40A1-B992-5A90FA05A3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3EEB67-4FEF-40A1-B992-5A90FA05A3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3EEB67-4FEF-40A1-B992-5A90FA05A3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3EEB67-4FEF-40A1-B992-5A90FA05A3C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

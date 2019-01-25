@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 using softaware.UsageAware.ApplicationInsights;
 using softaware.UsageAware.UI.DemoClient.ViewModels;
+using System.Windows;
 
 namespace softaware.UsageAware.UI.DemoClient
 {
@@ -25,6 +14,10 @@ namespace softaware.UsageAware.UI.DemoClient
         public MainWindow()
         {
             InitializeComponent();
+
+            // TODO: read from config, use dependency injection
+            TelemetryConfiguration.Active.InstrumentationKey = "94287a08-a0b8-483d-9cf5-2c18cb1f88cf";
+            TelemetryConfiguration.Active.TelemetryInitializers.Add(new UsageAwareTelemetryInitializer(() => new UsageAwareContext("demo-user", "demo-tenant")));
 
             this.DataContext = new MainViewModel(new UsageAwareLogger());
         }

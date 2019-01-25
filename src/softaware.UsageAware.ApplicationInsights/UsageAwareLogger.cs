@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.ApplicationInsights;
 
@@ -10,7 +11,7 @@ namespace softaware.UsageAware.ApplicationInsights
 
         public UsageAwareLogger()
         {
-            this.client = UsageAware.GetTelemetryClient();
+            this.client = new TelemetryClient();
         }
 
         public Task TrackActionAsync(string area, string action, IEnumerable<KeyValuePair<string, string>> additionalProperties = null)

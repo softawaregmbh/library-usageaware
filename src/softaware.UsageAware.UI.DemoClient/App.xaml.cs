@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.ApplicationInsights.Extensibility;
+using softaware.UsageAware.ApplicationInsights;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,8 +16,7 @@ namespace softaware.UsageAware.UI.DemoClient
     public partial class App : Application
     {
         public App()
-        {            
-            ApplicationInsights.UsageAware.Initialize("94287a08-a0b8-483d-9cf5-2c18cb1f88cf", () => new UsageAwareContext("demo-user", "demo-tenant"), false);
+        {
         }
     }
 }
