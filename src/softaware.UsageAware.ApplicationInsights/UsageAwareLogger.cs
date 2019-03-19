@@ -14,6 +14,25 @@ namespace softaware.UsageAware.ApplicationInsights
             this.client = new TelemetryClient();
         }
 
+        public UsageAwareLogger(UsageAwareContext context)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            this.client = new TelemetryClient();
+            if (context.UserId != null)
+            {
+                this.client.Context.User.Id = context.UserId;
+            }
+
+            if (context.TenantId != null)
+            {
+                this.client.Context.User.AccountId = context.TenantId;
+            }
+        }
+
         public Task TrackActionAsync(string area, string action, IEnumerable<KeyValuePair<string, string>> additionalProperties = null)
         {
             var properties = new Dictionary<string, string>();

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Company>softaware gmbh</Company>
     <Authors>softaware gmbh</Authors>
     <Copyright>softaware gmbh</Copyright>
@@ -17,7 +17,7 @@
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
     <PackageIconUrl>https://secure.gravatar.com/avatar/d441f5a5514d2afce7da518a89f028d0?s=512&amp;amp;amp;r=g&amp;amp;amp;d=retro</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/softawaregmbh/library-usageaware/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>Version 2.0 simplifies the usage. There are no more UsageAwareOptions and explicit initialization is no longer required.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 2.1 adds a new constructor overload accepting a UsageAwareContext to the UsageAwareLogger class, allowing to use the logger without a TelemetryInitializer.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
