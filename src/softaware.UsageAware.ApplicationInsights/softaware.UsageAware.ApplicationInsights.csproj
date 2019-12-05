@@ -1,31 +1,35 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.1</Version>
+    <Version>3.0.0</Version>
     <Company>softaware gmbh</Company>
     <Authors>softaware gmbh</Authors>
     <Copyright>softaware gmbh</Copyright>
     <Product>UsageAware</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>UsageAware is a library for tracking user actions in an application. This package logs the events to Application Insights.</Description>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <FileVersion>3.0.0.0</FileVersion>
     <PackageTags>softaware, usage, track, ApplicationInsights</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/softawaregmbh/library-usageaware</RepositoryUrl>
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/d441f5a5514d2afce7da518a89f028d0?s=512&amp;amp;amp;r=g&amp;amp;amp;d=retro</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/softawaregmbh/library-usageaware/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>Version 2.1 adds a new constructor overload accepting a UsageAwareContext to the UsageAwareLogger class, allowing to use the logger without a TelemetryInitializer.</PackageReleaseNotes>
+    <PackageIcon>package-icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>In this release, the ApplicationInsights TelementryClient gets injected into UsageAwareLogger via constructor.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.8.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.11.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\softaware.UsageAware\softaware.UsageAware.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Assets\package-icon.png" Link="package-icon.png" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 </Project>

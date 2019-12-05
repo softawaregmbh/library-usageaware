@@ -2,21 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>softaware gmbh</Authors>
     <Company>softaware gmbh</Company>
     <Copyright>softaware gmbh</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>UsageAware is a library for tracking user actions in an application.</Description>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <Product>UsageAware</Product>
-    <PackageLicenseUrl>https://github.com/softawaregmbh/library-usageaware/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
     <RepositoryUrl>https://github.com/softawaregmbh/library-usageaware</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>softaware, usage, track</PackageTags>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/d441f5a5514d2afce7da518a89f028d0?s=512&amp;amp;amp;r=g&amp;amp;amp;d=retro</PackageIconUrl>
+    <PackageIcon>package-icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\Assets\package-icon.png" Link="package-icon.png" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
 </Project>

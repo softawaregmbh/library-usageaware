@@ -2,31 +2,34 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <Authors>softaware gmbh</Authors>
     <Company>softaware gmbh</Company>
     <Description>UsageAware is a library for tracking user actions in an application. This package contains an ASP.NET Core middleware for logging the events to Application Insights.</Description>
     <Copyright>softaware gmbh</Copyright>
     <Product>UsageAware</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>1.0.0.0</FileVersion>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/d441f5a5514d2afce7da518a89f028d0?s=512&amp;amp;amp;r=g&amp;amp;amp;d=retro</PackageIconUrl>
+    <FileVersion>3.0.0.0</FileVersion>
     <PackageTags>softaware, usage, track, ApplicationInsights</PackageTags>
-    <PackageLicenseUrl>https://github.com/softawaregmbh/library-usageaware/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
     <RepositoryUrl>https://github.com/softawaregmbh/library-usageaware</RepositoryUrl>
+    <PackageIcon>package-icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Version 2.0 simplifies the usage, a call to services.AddUsageAware is all that is needed now.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 3.0.0 supports ASP.NET Core 3.1</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\softaware.UsageAware.ApplicationInsights\softaware.UsageAware.ApplicationInsights.csproj" />
     <ProjectReference Include="..\softaware.UsageAware\softaware.UsageAware.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Assets\package-icon.png" Link="package-icon.png" Pack="true" PackagePath="/" />
   </ItemGroup>
 
 </Project>
