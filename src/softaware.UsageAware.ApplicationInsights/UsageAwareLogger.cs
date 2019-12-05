@@ -9,19 +9,20 @@ namespace softaware.UsageAware.ApplicationInsights
     {
         private readonly TelemetryClient client;
 
-        public UsageAwareLogger()
+        public UsageAwareLogger(TelemetryClient client)
         {
-            this.client = new TelemetryClient();
+            this.client = client;
         }
 
-        public UsageAwareLogger(UsageAwareContext context)
+        public UsageAwareLogger(TelemetryClient client, UsageAwareContext context)
         {
+            this.client = client ?? throw new ArgumentNullException(nameof(client));
+            
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            this.client = new TelemetryClient();
             if (context.UserId != null)
             {
                 this.client.Context.User.Id = context.UserId;

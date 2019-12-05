@@ -19,7 +19,7 @@ namespace softaware.UsageAware.UI.DemoClient
             TelemetryConfiguration.Active.InstrumentationKey = "94287a08-a0b8-483d-9cf5-2c18cb1f88cf";
             TelemetryConfiguration.Active.TelemetryInitializers.Add(new UsageAwareTelemetryInitializer(() => new UsageAwareContext("demo-user", "demo-tenant")));
 
-            this.DataContext = new MainViewModel(new UsageAwareLogger());
+            this.DataContext = new MainViewModel(new UsageAwareLogger(new TelemetryClient()));
         }
     }
 }

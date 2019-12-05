@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationInsightsResourceId>/subscriptions/b2b49f65-9a48-4e16-812d-794e29cddc25/resourcegroups/UsageAware/providers/microsoft.insights/components/UsageAware</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/b2b49f65-9a48-4e16-812d-794e29cddc25/resourcegroups/UsageAware/providers/microsoft.insights/components/UsageAware</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.5.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>
