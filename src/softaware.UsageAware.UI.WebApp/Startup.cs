@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace softaware.UsageAware.UI.WebApp
 {
@@ -28,7 +23,12 @@ namespace softaware.UsageAware.UI.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ITelemetryInitializer, EnvironmentTelemetryInitializer>();
-            services.AddUsageAware(() => new UsageAwareContext("demo-user", "demo-tenant"));
+            //services.AddUsageAware(() => new UsageAwareContext("demo-user", "demo-tenant"));
+            services.AddUsageAware(s =>
+            {
+                var httpContext = s.GetRequiredService<IHttpContextAccessor>().HttpContext;
+                return new UsageAwareContext(httpContext?.User?.Identity?.Name ?? "demo-user", "demo-tenant");
+            });
             services.AddApplicationInsightsTelemetry();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
