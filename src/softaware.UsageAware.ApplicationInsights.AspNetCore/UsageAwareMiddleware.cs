@@ -20,5 +20,18 @@ namespace Microsoft.AspNetCore.Builder
 
             return services;
         }
+
+        public static IServiceCollection AddUsageAware(this IServiceCollection services, Func<IServiceProvider, UsageAwareContext> contextProvider)
+        {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            services.AddSingleton<ITelemetryInitializer>(s => new UsageAwareTelemetryInitializer(() => contextProvider(s)));
+            services.AddScoped<IUsageAwareLogger, UsageAwareLogger>();
+
+            return services;
+        }
     }
 }
