@@ -23,11 +23,11 @@ namespace softaware.UsageAware.UI.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ITelemetryInitializer, EnvironmentTelemetryInitializer>();
-            //services.AddUsageAware(() => new UsageAwareContext("demo-user", "demo-tenant"));
+            services.AddTransient(s => s.GetRequiredService<IHttpContextAccessor>().HttpContext?.User);
             services.AddUsageAware(s =>
             {
-                var httpContext = s.GetRequiredService<IHttpContextAccessor>().HttpContext;
-                return new UsageAwareContext(httpContext?.User?.Identity?.Name ?? "demo-user", "demo-tenant");
+                var principal = s.GetRequiredService<ClaimsPrincipal>();
+                return new UsageAwareContext(principal.Identity?.Name ?? "demo-user", "demo-tenant");
             });
             services.AddApplicationInsightsTelemetry();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
