@@ -2,21 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.1.0</Version>
+    <Version>3.1.1</Version>
     <Authors>softaware gmbh</Authors>
     <Company>softaware gmbh</Company>
     <Description>UsageAware is a library for tracking user actions in an application. This package contains an ASP.NET Core middleware for logging the events to Application Insights.</Description>
     <Copyright>softaware gmbh</Copyright>
     <Product>UsageAware</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <FileVersion>3.1.0.0</FileVersion>
+    <FileVersion>3.1.1.0</FileVersion>
+	<AssemblyVersion>3.1.1.0</AssemblyVersion>
     <PackageTags>softaware, usage, track, ApplicationInsights</PackageTags>
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
     <RepositoryUrl>https://github.com/softawaregmbh/library-usageaware</RepositoryUrl>
     <PackageIcon>package-icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Version 3.1.0 adds an AddUsageAware overload with an IServiceProvider parameter.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 3.1.1 now uses the Authenticated User Id property when setting the user id.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

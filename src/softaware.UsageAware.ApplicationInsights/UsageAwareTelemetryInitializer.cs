@@ -1,6 +1,6 @@
-﻿using Microsoft.ApplicationInsights.Channel;
+﻿using System;
+using Microsoft.ApplicationInsights.Channel;
 using Microsoft.ApplicationInsights.Extensibility;
-using System;
 
 namespace softaware.UsageAware.ApplicationInsights
 {
@@ -19,7 +19,7 @@ namespace softaware.UsageAware.ApplicationInsights
 
             if (context.UserId != null)
             {
-                telemetry.Context.User.Id = context.UserId;
+                telemetry.Context.User.AuthenticatedUserId = context.UserId;
             }
 
             if (context.TenantId != null)

@@ -2,22 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Company>softaware gmbh</Company>
     <Authors>softaware gmbh</Authors>
     <Copyright>softaware gmbh</Copyright>
     <Product>UsageAware</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>UsageAware is a library for tracking user actions in an application. This package logs the events to Application Insights.</Description>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <FileVersion>3.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
+    <FileVersion>3.0.1.0</FileVersion>
     <PackageTags>softaware, usage, track, ApplicationInsights</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/softawaregmbh/library-usageaware</RepositoryUrl>
     <PackageProjectUrl>https://github.com/softawaregmbh/library-usageaware</PackageProjectUrl>
     <PackageIcon>package-icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>In this release, the ApplicationInsights TelementryClient gets injected into UsageAwareLogger via constructor.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 3.0.1 now uses the Authenticated User Id property when setting the user id.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
